@@ -20,10 +20,15 @@ export class SearchResultsComponent {
     });
   }
 
-  async searchByKeywords(query: string, page: number = 1) {
+  async searchByKeywords(event, query: string, page: number = 1) {
+    event.preventDefault();
     const res = await fetch(`https://www.food2fork.com/api/search?key=c481f3a84bf7098d43a3bc7699a7567c&q=${query}&page=${page}`);
     const results = await res.json();
 
     this.recipes = results.recipes;
+  }
+
+  enterSearch(event, query: string, page: number = 1) {
+    event.preventDefault();
   }
 }

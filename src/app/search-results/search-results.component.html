@@ -1,5 +1,7 @@
-<input type="text" #query>
-<button (click)="searchByKeywords(query.value)">Search</button>
+<form (submit)="searchByKeywords($event, query.value)">
+  <input type="text" #query>
+  <button (click)="searchByKeywords($event, query.value)">Search</button>
+</form>
 
 <ul class="recipe-ul">
   <li *ngFor="let recipe of recipes" class="recipe-item">
