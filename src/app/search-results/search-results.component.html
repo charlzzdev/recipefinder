@@ -1,16 +1,18 @@
 <input type="text" #query>
 <button (click)="searchByKeywords(query.value)">Search</button>
 
-<ul>
+<ul class="recipe-ul">
   <li *ngFor="let recipe of recipes" class="recipe-item">
-    <img src="{{ recipe.image_url }}" alt="Recipe image">
-    <a href="{{ recipe.source_url }}" class="title">{{ recipe.title }}</a>
-    <a href="{{ recipe.publisher_url }}" class="publisher">By: {{ recipe.publisher }}</a>
+    <div class="img-container">
+      <img src="{{ recipe.image_url }}" alt="Recipe image">
+      <a href="{{ recipe.source_url }}" class="title">{{ recipe.title }}</a>
+    </div>
     <button #ingredients (click)="fetchRecipe(recipe.recipe_id) && ingredients.disabled = true">
       View ingredients
     </button>
-    <ul>
+    <ul class="ingredients-ul">
       <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient }}</li>
     </ul>
+    <a href="{{ recipe.publisher_url }}" class="publisher">By: {{ recipe.publisher }}</a>
   </li>
 </ul>

@@ -1,0 +1,73 @@
+.recipe-ul{
+  display: flex;
+  flex-wrap: wrap;
+  width: 75%;
+  margin: 0 auto;
+  justify-content: center;
+  list-style-type: none;
+
+  .recipe-item {
+    width: 15rem;
+    margin: 1rem;
+
+    * {
+      display: block;
+    }
+
+    .img-container{
+      height: 15rem;
+      overflow: hidden;
+      border-radius: 5px;
+      position: relative;
+
+      .title {
+        position: absolute;
+        top: 0;
+        color: #fff;
+        background: #0006;
+        padding: 0.3rem;
+        font-weight: bold;
+        font-size: 1.3rem;
+      }
+    }
+
+    a{
+      text-decoration: none;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+
+    .publisher{
+      color: tomato;
+    }
+
+    button{
+      background: tomato;
+      border: 0;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem auto;
+      cursor: pointer;
+
+      &:active{
+        transform: translateY(2px) scale(0.95);
+      }
+
+      &:focus{
+        outline: 0;
+      }
+
+      &:disabled{
+        background: #d4d4d4;
+        cursor: default;
+      }
+    }
+
+    .ingredients-ul{
+      margin-left: 1rem;
+      list-style-type: disc;
+    }
+  }
+}
